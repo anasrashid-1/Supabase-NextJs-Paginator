@@ -103,7 +103,7 @@ const Table = () => {
     const totalPages = Math.ceil(totalCount / limit);
 
     return (
-        <div className="p-6 mx-10">
+        <div className="p-6 lg:mx-10 ">
             {/* Table Controls */}
             <div className="mb-4 flex flex-col sm:flex-row justify-between items-center">
                 <div className="border px-4 py-2 text-lg rounded-sm w-full sm:w-auto">
