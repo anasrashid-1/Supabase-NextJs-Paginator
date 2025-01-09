@@ -26,8 +26,13 @@ const Table = () => {
         const fetchData = async () => {
             setLoading(true);
 
+            console.log("limit: " + limit)
+            console.log("total count: " + totalCount);
+            console.log("offset: " + offset);
+
             if (limit !== totalCount) {
                 // Fetch total count of items
+
                 const { count, error: countError } = await supabase
                     .from("newproducts")
                     .select("*", { count: "exact", head: true });
@@ -48,7 +53,7 @@ const Table = () => {
             if (error) {
                 console.error("Error fetching data:", error);
             } else {
-                setData((prevData) => (limit === totalCount ? [...prevData, ...(fetchedData || [])] : fetchedData || []));
+                setData((prevData) => (limit === totalCount && prevData[0].id === 1 ? [...prevData, ...(fetchedData || [])] : fetchedData || []));
                 if (fetchedData && fetchedData.length < 30) {
                     setHasMore(false);
                 }
@@ -162,7 +167,7 @@ const Table = () => {
                         <button
                             onClick={() => handlePageChange(page - 1)}
                             disabled={page === 1}
-                            className="px-4 py-2 bg-gray-600 text-white rounded-sm disabled:bg-gray-400"
+                            className="px-4 py-2 bg-gray-600  px-2 py-1 text-white rounded-sm disabled:bg-gray-400"
                         >
                             Previous
                         </button>
@@ -170,7 +175,7 @@ const Table = () => {
                         <button
                             onClick={() => handlePageChange(page + 1)}
                             disabled={page * limit >= totalCount}
-                            className="px-4 py-2 bg-gray-600 text-white rounded-sm disabled:bg-gray-400"
+                            className="lg:px-4 lg:py-2 px-2 py-1 bg-gray-600 text-white rounded-sm disabled:bg-gray-400"
                         >
                             Next
                         </button>
