@@ -49,9 +49,6 @@ const TableSkeleton = () => {
                                 <td className="px-4 py-2">
                                     <div className="bg-gray-300 h-6 w-32 rounded-sm animate-pulse"></div>
                                 </td>
-                                <td className="px-4 py-2">
-                                    <div className="bg-gray-300 h-6 w-32 rounded-sm animate-pulse"></div>
-                                </td>
                             </tr>
                         ))}
                     </tbody>

@@ -167,7 +167,7 @@ const Table = () => {
                         <button
                             onClick={() => handlePageChange(page - 1)}
                             disabled={page === 1}
-                            className="px-4 py-2 bg-gray-600  px-2 py-1 text-white rounded-sm disabled:bg-gray-400"
+                            className="lg:px-4 lg:py-2 bg-gray-600  px-2 py-1 text-white rounded-sm disabled:bg-gray-400"
                         >
                             Previous
                         </button>
