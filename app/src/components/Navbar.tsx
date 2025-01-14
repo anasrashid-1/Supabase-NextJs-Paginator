@@ -41,7 +41,7 @@ const Navbar = () => {
         <span>
             <NotificationModal notifications = {notifications} setNotifications={setNotifications} />
         </span>
-        <span className='inline-block absolute bg-white w-5 h-5 top-[-4] left-4 text-center text-sm rounded-lg font-bold'>
+        <span className='inline-block absolute bg-white w-5 h-5 top-0 left-4 text-center text-sm rounded-lg font-bold'>
           {notifications.length}
         </span>
       </div>
